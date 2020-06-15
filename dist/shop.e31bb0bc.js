@@ -28299,58 +28299,50 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var HomePage = function HomePage() {
   return _react.default.createElement("div", {
-    "class": "homepage"
+    className: "homepage"
+  }, _react.default.createElement("h1", null, "Welcome to my Homepage"), _react.default.createElement("div", {
+    className: "directory-menu"
   }, _react.default.createElement("div", {
-    "class": "directory-menu"
+    className: "menu-item"
   }, _react.default.createElement("div", {
-    "class": "menu-item"
+    className: "content"
   }, _react.default.createElement("div", {
-    "class": "content"
-  }, _react.default.createElement("h1", {
-    "class": "title"
-  }, "Hats"), _react.default.createElement("span", {
-    "class": "subtitle"
-  }, "Shop Now")))), _react.default.createElement("div", {
-    "class": "directory-menu"
+    className: "title"
+  }, "HATS"), _react.default.createElement("span", {
+    className: "subtitle"
+  }, "SHOP NOW"))), _react.default.createElement("div", {
+    className: "menu-item"
   }, _react.default.createElement("div", {
-    "class": "menu-item"
+    className: "content"
   }, _react.default.createElement("div", {
-    "class": "content"
-  }, _react.default.createElement("h1", {
-    "class": "title"
-  }, "Jackets"), _react.default.createElement("span", {
-    "class": "subtitle"
-  }, "Shop Now")))), _react.default.createElement("div", {
-    "class": "directory-menu"
+    className: "title"
+  }, "JACKETS"), _react.default.createElement("span", {
+    className: "subtitle"
+  }, "SHOP NOW"))), _react.default.createElement("div", {
+    className: "menu-item"
   }, _react.default.createElement("div", {
-    "class": "menu-item"
+    className: "content"
   }, _react.default.createElement("div", {
-    "class": "content"
-  }, _react.default.createElement("h1", {
-    "class": "title"
-  }, "Sneakers"), _react.default.createElement("span", {
-    "class": "subtitle"
-  }, "Shop Now")))), _react.default.createElement("div", {
-    "class": "directory-menu"
+    className: "title"
+  }, "SHOES"), _react.default.createElement("span", {
+    className: "subtitle"
+  }, "SHOP NOW"))), _react.default.createElement("div", {
+    className: "menu-item"
   }, _react.default.createElement("div", {
-    "class": "menu-item"
+    className: "content"
   }, _react.default.createElement("div", {
-    "class": "content"
-  }, _react.default.createElement("h1", {
-    "class": "title"
-  }, "Womens"), _react.default.createElement("span", {
-    "class": "subtitle"
-  }, "Shop Now")))), _react.default.createElement("div", {
-    "class": "directory-menu"
+    className: "title"
+  }, "WOMENS"), _react.default.createElement("span", {
+    className: "subtitle"
+  }, "SHOP NOW"))), _react.default.createElement("div", {
+    className: "menu-item"
   }, _react.default.createElement("div", {
-    "class": "menu-item"
+    className: "content"
   }, _react.default.createElement("div", {
-    "class": "content"
-  }, _react.default.createElement("h1", {
-    "class": "title"
-  }, "Mens"), _react.default.createElement("span", {
-    "class": "subtitle"
-  }, "Shop Now")))));
+    className: "title"
+  }, "MENS"), _react.default.createElement("span", {
+    className: "subtitle"
+  }, "SHOP NOW")))));
 };
 
 var _default = HomePage;

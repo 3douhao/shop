@@ -28285,7 +28285,79 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"HomePage.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"../../.nvm/versions/node/v10.15.2/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../.nvm/versions/node/v10.15.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../../.nvm/versions/node/v10.15.2/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/menu-item/menu-item.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../.nvm/versions/node/v10.15.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/menu-item/menu-item.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28295,59 +28367,169 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+require("../menu-item/menu-item.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var MenuItem = function MenuItem(_ref) {
+  var title = _ref.title,
+      imageUrl = _ref.imageUrl,
+      size = _ref.size;
+  return _react.default.createElement("div", {
+    className: "".concat(size, " menu-item")
+  }, _react.default.createElement("div", {
+    className: "background-image",
+    style: {
+      backgroundImage: "url(".concat(imageUrl, ")")
+    }
+  }), _react.default.createElement("div", {
+    className: "content"
+  }, _react.default.createElement("div", {
+    className: "title"
+  }, title.toUpperCase()), _react.default.createElement("span", {
+    className: "subtitle"
+  }, "SHOP NOW")));
+};
+
+var _default = MenuItem;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../menu-item/menu-item.scss":"components/menu-item/menu-item.scss"}],"components/directory/directory.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../.nvm/versions/node/v10.15.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/directory/directory.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _menuItem = _interopRequireDefault(require("../menu-item/menu-item"));
+
+require("./directory.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var Directory = /*#__PURE__*/function (_React$Component) {
+  _inherits(Directory, _React$Component);
+
+  var _super = _createSuper(Directory);
+
+  function Directory() {
+    var _this;
+
+    _classCallCheck(this, Directory);
+
+    _this = _super.call(this);
+    _this.state = {
+      sections: [{
+        title: 'hats',
+        imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+        id: 1
+      }, {
+        title: 'jackets',
+        imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+        id: 2
+      }, {
+        title: 'sneakers',
+        imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+        id: 3
+      }, {
+        title: 'womens',
+        imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+        size: 'large',
+        id: 4
+      }, {
+        title: 'mens',
+        imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+        size: 'large',
+        id: 5
+      }]
+    };
+    return _this;
+  }
+
+  _createClass(Directory, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", {
+        className: "directory-menu"
+      }, this.state.sections.map(function (_ref) {
+        var title = _ref.title,
+            imageUrl = _ref.imageUrl,
+            size = _ref.size,
+            id = _ref.id;
+        return _react.default.createElement(_menuItem.default, {
+          key: id,
+          title: title,
+          imageUrl: imageUrl,
+          size: size
+        });
+      }));
+    }
+  }]);
+
+  return Directory;
+}(_react.default.Component);
+
+var _default = Directory;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../menu-item/menu-item":"components/menu-item/menu-item.js","./directory.scss":"components/directory/directory.scss"}],"pages/homepage/homepage.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../.nvm/versions/node/v10.15.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"pages/homepage/homepage.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _directory = _interopRequireDefault(require("../../components/directory/directory"));
+
+require("./homepage.scss");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var HomePage = function HomePage() {
   return _react.default.createElement("div", {
     className: "homepage"
-  }, _react.default.createElement("h1", null, "Welcome to my Homepage"), _react.default.createElement("div", {
-    className: "directory-menu"
-  }, _react.default.createElement("div", {
-    className: "menu-item"
-  }, _react.default.createElement("div", {
-    className: "content"
-  }, _react.default.createElement("div", {
-    className: "title"
-  }, "HATS"), _react.default.createElement("span", {
-    className: "subtitle"
-  }, "SHOP NOW"))), _react.default.createElement("div", {
-    className: "menu-item"
-  }, _react.default.createElement("div", {
-    className: "content"
-  }, _react.default.createElement("div", {
-    className: "title"
-  }, "JACKETS"), _react.default.createElement("span", {
-    className: "subtitle"
-  }, "SHOP NOW"))), _react.default.createElement("div", {
-    className: "menu-item"
-  }, _react.default.createElement("div", {
-    className: "content"
-  }, _react.default.createElement("div", {
-    className: "title"
-  }, "SHOES"), _react.default.createElement("span", {
-    className: "subtitle"
-  }, "SHOP NOW"))), _react.default.createElement("div", {
-    className: "menu-item"
-  }, _react.default.createElement("div", {
-    className: "content"
-  }, _react.default.createElement("div", {
-    className: "title"
-  }, "WOMENS"), _react.default.createElement("span", {
-    className: "subtitle"
-  }, "SHOP NOW"))), _react.default.createElement("div", {
-    className: "menu-item"
-  }, _react.default.createElement("div", {
-    className: "content"
-  }, _react.default.createElement("div", {
-    className: "title"
-  }, "MENS"), _react.default.createElement("span", {
-    className: "subtitle"
-  }, "SHOP NOW")))));
+  }, _react.default.createElement("h1", null, "Welcome to my Homepage"), _react.default.createElement(_directory.default, null));
 };
 
 var _default = HomePage;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../../components/directory/directory":"components/directory/directory.js","./homepage.scss":"pages/homepage/homepage.scss"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28357,7 +28539,7 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _HomePage = _interopRequireDefault(require("./HomePage"));
+var _homepage = _interopRequireDefault(require("./pages/homepage/homepage"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28401,7 +28583,7 @@ var App = /*#__PURE__*/function (_Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement(_HomePage.default, null);
+      return _react.default.createElement(_homepage.default, null);
     }
   }]);
 
@@ -28410,7 +28592,7 @@ var App = /*#__PURE__*/function (_Component) {
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./HomePage":"HomePage.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./pages/homepage/homepage":"pages/homepage/homepage.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -28450,7 +28632,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49998" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64138" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

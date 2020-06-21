@@ -32514,7 +32514,388 @@ var HomePage = function HomePage() {
 
 var _default = HomePage;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../../components/directory/directory":"components/directory/directory.js","./homepage.scss":"pages/homepage/homepage.scss"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../../components/directory/directory":"components/directory/directory.js","./homepage.scss":"pages/homepage/homepage.scss"}],"pages/shoppage/shop.data.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var SHOP_DATA = [{
+  id: 1,
+  title: 'Hats',
+  routeName: 'hats',
+  items: [{
+    id: 1,
+    name: 'Brown Brim',
+    imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+    price: 25
+  }, {
+    id: 2,
+    name: 'Blue Beanie',
+    imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
+    price: 18
+  }, {
+    id: 3,
+    name: 'Brown Cowboy',
+    imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
+    price: 35
+  }, {
+    id: 4,
+    name: 'Grey Brim',
+    imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
+    price: 25
+  }, {
+    id: 5,
+    name: 'Green Beanie',
+    imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
+    price: 18
+  }, {
+    id: 6,
+    name: 'Palm Tree Cap',
+    imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
+    price: 14
+  }, {
+    id: 7,
+    name: 'Red Beanie',
+    imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
+    price: 18
+  }, {
+    id: 8,
+    name: 'Wolf Cap',
+    imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
+    price: 14
+  }, {
+    id: 9,
+    name: 'Blue Snapback',
+    imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
+    price: 16
+  }]
+}, {
+  id: 2,
+  title: 'Sneakers',
+  routeName: 'sneakers',
+  items: [{
+    id: 10,
+    name: 'Adidas NMD',
+    imageUrl: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
+    price: 220
+  }, {
+    id: 11,
+    name: 'Adidas Yeezy',
+    imageUrl: 'https://i.ibb.co/dJbG1cT/yeezy.png',
+    price: 280
+  }, {
+    id: 12,
+    name: 'Black Converse',
+    imageUrl: 'https://i.ibb.co/bPmVXyP/black-converse.png',
+    price: 110
+  }, {
+    id: 13,
+    name: 'Nike White AirForce',
+    imageUrl: 'https://i.ibb.co/1RcFPk0/white-nike-high-tops.png',
+    price: 160
+  }, {
+    id: 14,
+    name: 'Nike Red High Tops',
+    imageUrl: 'https://i.ibb.co/QcvzydB/nikes-red.png',
+    price: 160
+  }, {
+    id: 15,
+    name: 'Nike Brown High Tops',
+    imageUrl: 'https://i.ibb.co/fMTV342/nike-brown.png',
+    price: 160
+  }, {
+    id: 16,
+    name: 'Air Jordan Limited',
+    imageUrl: 'https://i.ibb.co/w4k6Ws9/nike-funky.png',
+    price: 190
+  }, {
+    id: 17,
+    name: 'Timberlands',
+    imageUrl: 'https://i.ibb.co/Mhh6wBg/timberlands.png',
+    price: 200
+  }]
+}, {
+  id: 3,
+  title: 'Jackets',
+  routeName: 'jackets',
+  items: [{
+    id: 18,
+    name: 'Black Jean Shearling',
+    imageUrl: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
+    price: 125
+  }, {
+    id: 19,
+    name: 'Blue Jean Jacket',
+    imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
+    price: 90
+  }, {
+    id: 20,
+    name: 'Grey Jean Jacket',
+    imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
+    price: 90
+  }, {
+    id: 21,
+    name: 'Brown Shearling',
+    imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
+    price: 165
+  }, {
+    id: 22,
+    name: 'Tan Trench',
+    imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
+    price: 185
+  }]
+}, {
+  id: 4,
+  title: 'Womens',
+  routeName: 'womens',
+  items: [{
+    id: 23,
+    name: 'Blue Tanktop',
+    imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
+    price: 25
+  }, {
+    id: 24,
+    name: 'Floral Blouse',
+    imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
+    price: 20
+  }, {
+    id: 25,
+    name: 'Floral Dress',
+    imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
+    price: 80
+  }, {
+    id: 26,
+    name: 'Red Dots Dress',
+    imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
+    price: 80
+  }, {
+    id: 27,
+    name: 'Striped Sweater',
+    imageUrl: 'https://i.ibb.co/KmSkMbH/striped-sweater.png',
+    price: 45
+  }, {
+    id: 28,
+    name: 'Yellow Track Suit',
+    imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
+    price: 135
+  }, {
+    id: 29,
+    name: 'White Blouse',
+    imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
+    price: 20
+  }]
+}, {
+  id: 5,
+  title: 'Mens',
+  routeName: 'mens',
+  items: [{
+    id: 30,
+    name: 'Camo Down Vest',
+    imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
+    price: 325
+  }, {
+    id: 31,
+    name: 'Floral T-shirt',
+    imageUrl: 'https://i.ibb.co/qMQ75QZ/floral-shirt.png',
+    price: 20
+  }, {
+    id: 32,
+    name: 'Black & White Longsleeve',
+    imageUrl: 'https://i.ibb.co/55z32tw/long-sleeve.png',
+    price: 25
+  }, {
+    id: 33,
+    name: 'Pink T-shirt',
+    imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
+    price: 25
+  }, {
+    id: 34,
+    name: 'Jean Long Sleeve',
+    imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
+    price: 40
+  }, {
+    id: 35,
+    name: 'Burgundy T-shirt',
+    imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
+    price: 25
+  }]
+}];
+var _default = SHOP_DATA;
+exports.default = _default;
+},{}],"components/collection-item/collection-item.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../.nvm/versions/node/v10.15.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/collection-item/collection-item.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./collection-item.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CollectionItem = function CollectionItem(_ref) {
+  var id = _ref.id,
+      price = _ref.price,
+      name = _ref.name,
+      imageUrl = _ref.imageUrl;
+  return _react.default.createElement("div", {
+    className: "collection-item"
+  }, _react.default.createElement("div", {
+    className: "image",
+    style: {
+      backgroundImage: "url(".concat(imageUrl, ")")
+    }
+  }), _react.default.createElement("div", {
+    className: "collection-footer"
+  }, _react.default.createElement("span", {
+    className: "name"
+  }, name), _react.default.createElement("span", {
+    className: "price"
+  }, price)));
+};
+
+var _default = CollectionItem;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./collection-item.scss":"components/collection-item/collection-item.scss"}],"components/collection-preview/collection-preview.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../.nvm/versions/node/v10.15.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/collection-preview/collection-preview.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _collectionItem = _interopRequireDefault(require("../collection-item/collection-item"));
+
+require("./collection-preview.scss");
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var CollectionPreview = function CollectionPreview(_ref2) {
+  var title = _ref2.title,
+      items = _ref2.items;
+  return _react.default.createElement("div", {
+    className: "collection-preview"
+  }, _react.default.createElement("h1", {
+    className: "title"
+  }, title.toUpperCase()), _react.default.createElement("div", {
+    className: "preview"
+  }, items.filter(function (item, index) {
+    return index < 4;
+  }).map(function (_ref) {
+    var id = _ref.id,
+        otherCollectionItemProps = _objectWithoutProperties(_ref, ["id"]);
+
+    return _react.default.createElement(_collectionItem.default, _extends({
+      key: id
+    }, otherCollectionItemProps));
+  })));
+};
+
+var _default = CollectionPreview;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../collection-item/collection-item":"components/collection-item/collection-item.js","./collection-preview.scss":"components/collection-preview/collection-preview.scss"}],"pages/shoppage/shoppage.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _shop = _interopRequireDefault(require("./shop.data"));
+
+var _collectionPreview = _interopRequireDefault(require("../../components/collection-preview/collection-preview"));
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var ShopPage = /*#__PURE__*/function (_React$Component) {
+  _inherits(ShopPage, _React$Component);
+
+  var _super = _createSuper(ShopPage);
+
+  function ShopPage() {
+    var _this;
+
+    _classCallCheck(this, ShopPage);
+
+    _this = _super.call(this);
+    _this.state = {
+      collections: _shop.default
+    };
+    return _this;
+  }
+
+  _createClass(ShopPage, [{
+    key: "render",
+    value: function render() {
+      var collections = this.state.collections;
+      return _react.default.createElement("div", {
+        className: "shop-page"
+      }, collections.map(function (_ref) {
+        var id = _ref.id,
+            otherCollectionProps = _objectWithoutProperties(_ref, ["id"]);
+
+        return _react.default.createElement(_collectionPreview.default, _extends({
+          key: id
+        }, otherCollectionProps));
+      }));
+    }
+  }]);
+
+  return ShopPage;
+}(_react.default.Component);
+
+var _default = ShopPage;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./shop.data":"pages/shoppage/shop.data.js","../../components/collection-preview/collection-preview":"components/collection-preview/collection-preview.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32527,6 +32908,8 @@ var _react = _interopRequireWildcard(require("react"));
 var _reactRouterDom = require("react-router-dom");
 
 var _homepage = _interopRequireDefault(require("./pages/homepage/homepage"));
+
+var _shoppage = _interopRequireDefault(require("./pages/shoppage/shoppage"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32556,12 +32939,6 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var Hats = function Hats() {
-  return _react.default.createElement("div", null, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/"
-  }, "HomePage"), _react.default.createElement("h1", null, "this is hats page"));
-};
-
 var App = /*#__PURE__*/function (_Component) {
   _inherits(App, _Component);
 
@@ -32582,8 +32959,8 @@ var App = /*#__PURE__*/function (_Component) {
         component: _homepage.default
       }), _react.default.createElement(_reactRouterDom.Route, {
         exact: true,
-        path: "/hats",
-        component: Hats
+        path: "/shop",
+        component: _shoppage.default
       }));
     }
   }]);
@@ -32593,7 +32970,7 @@ var App = /*#__PURE__*/function (_Component) {
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./pages/homepage/homepage":"pages/homepage/homepage.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./pages/homepage/homepage":"pages/homepage/homepage.js","./pages/shoppage/shoppage":"pages/shoppage/shoppage.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -32635,7 +33012,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50322" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51162" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
